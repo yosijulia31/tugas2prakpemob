@@ -11,12 +11,12 @@ A.	SCREENSHOT
 
 
 
-B.	Proses Passing Data dari Form Menuju Tampilan 
-1.	Di halaman FormData, user menginputkan data di form yang berisikan Nama, NIM, dan Tahun Lahir.
-2.	Data yang sudah di-inputkan diterima TextField di setiap nama, nim, dan tahun. Di sini setiap TextField memiliki TextEditingController. Controller ini dugunakan untuk mengambil nilai input dari TextField.
-3.	User menekan tombol Simpan yang di dalamnya ada handler “onPressed” yang didalamnya digunakan untuk mengambil data dari controller.
+B.	Proses Passing Data dari Form Menuju Tampilan :
+pertama, pada bagian halaman FormData, user menginputkan data di form yang berisikan Nama, NIM, dan Tahun Lahir.
+dilanjutkan pada Data yang sudah di-inputkan diterima TextField di setiap nama, nim, dan tahun. Di sini setiap TextField memiliki TextEditingController. Controller ini dugunakan untuk mengambil nilai input dari TextField.
+Setelah itu, User menekan tombol Simpan yang di dalamnya ada handler “onPressed” yang didalamnya digunakan untuk mengambil data dari controller.
 
-Codenya ini:
+Codenya sebagai berikut:
 
 onPressed: () {
 
@@ -27,10 +27,9 @@ onPressed: () {
   String nim = _nimController.text; //untuk mengambil teks yg diinput pada TextField NIM
   
   int tahun = int.parse(_tahunController.text); //untuk mengambil teks yg diinput pada TextField tahun lahir, dan kemudian di konversi menjadi int menggunakan int.parse
+Setelah data diambil dari form, aplikasi menggunakan navigasi ke halaman lain, yaitu halaman tampil_data, menggunakan Navigator.push(). Data yang diambil nama, nim, dan tahun yang juga ikut dikirim ke halaman tampil_data. 
 
-4.	Setelah data diambil dari form, aplikasi menggunakan navigasi ke halaman lain, yaitu halaman tampil_data, menggunakan Navigator.push(). Data yang diambil nama, nim, dan tahun yang juga ikut dikirim ke halaman tampil_data. 
-
-Codenya ini:
+Codenya sebagai berikut:
 
 Navigator.of(context).push(MaterialPageRoute(
  
@@ -40,10 +39,9 @@ Navigator.of(context).push(MaterialPageRoute(
 
 );
 
-5.	Data yang dikirim dari form_data diterima tampil_data melalui konstruktor widget dan setelah diterima lalu diinisialisasi melalui konstruktor TampilData, sehingga dapat digunakan dalam widget untuk ditampilkan.
-6.	Setekah data diterima oleh halaman tampil_data, data tersebut diolah sesuai kebutuhan. Disini yang perlu di olah seperti umur. Umur dihitung berdasarkan tahun saat ini dikurangi tahun lahir, dan hasilnya ditampilkan di layer.
+Data yang dikirim dari form_data diterima tampil_data melalui konstruktor widget dan setelah diterima lalu diinisialisasi melalui konstruktor TampilData, sehingga dapat digunakan dalam widget untuk ditampilkan. Setekah data diterima oleh halaman tampil_data, data tersebut diolah sesuai kebutuhan. Disini yang perlu di olah seperti umur. Umur dihitung berdasarkan tahun saat ini dikurangi tahun lahir, dan hasilnya ditampilkan di layer.
 
-Codenya ini:
+Code:
 
 final int umur = DateTime.now().year - tahun; //menghitung umur berdasarkan tahun saat ini dikurangi tahun lahir yang diinput
 
