@@ -7,9 +7,7 @@ NIM		: H1D021022
 Shift Baru	: D
 
 A.	SCREENSHOT
-  
-
-
+(ada di file diatas)
 
 B.	Proses Passing Data dari Form Menuju Tampilan :
 pertama, pada bagian halaman FormData, user menginputkan data di form yang berisikan Nama, NIM, dan Tahun Lahir.
