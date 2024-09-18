@@ -45,7 +45,7 @@ Code:
 
 final int umur = DateTime.now().year - tahun; //menghitung umur berdasarkan tahun saat ini dikurangi tahun lahir yang diinput
 
-7.	Setelah data selesai di olah maka data ditampilkan dengan code berikut ini:
+Setelah data selesai di olah maka data ditampilkan dengan code berikut ini:
 
 @override
 
